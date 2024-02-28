@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Viajes</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table table-striped">
+                        <div class="thead">
+                            <tr>
+                                <th scope="col">Codigo</th>
+                                <th scope="col">Fecha Inicio</th>
+                                <th scope="col">Fecha Final</th>
+                                <th scope="col">Arranque</th>
+                                <th scope="col">Destino</th>
+                                <th scope="col">Accion</th>
+                            </tr>
+                        </div>
+                        <div class="tbody">
+                            <tr *ngFor="let lst of datos">
+                                <td scope="row">{{ lst.codigo }}</td>
+                                <td scope="row">{{ lst.fechaInic }}</td>
+                                <td scope="row">{{ lst.fechaFinal }}</td>
+                                <td scope="row">{{ lst.inicio }}</td>
+                                <td scope="row">{{ lst.destino }}</td>
+                                <td scope="row">
+                                    <button (click)="ticket(lst.id)" class="btn btn-success">Ticket</button>
+                                    <button></button>
+                                </td>
+                            </tr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>  

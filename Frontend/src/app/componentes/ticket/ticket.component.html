@@ -1,0 +1,83 @@
+
+<form [formGroup]="formTicket" (ngSubmit)="onSave()">
+    <div class="modal-header">
+        <h5 class="modal-title">Ticket</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Contacto</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="Empresa" class="form-label">Empresa</label>
+                                <select id="Empresa" formControlName="empresa" formControlName="empresa">
+                                    <option *ngFor="let option of empresa" [value]="option.id">
+                                        {{ option.nombre }}
+                                    </option>
+                                </select>
+                            </div>
+    
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="Cantidad" class="form-label">Cantidad</label>
+                                <input type="text" class="form-control" id="Cantidad" formControlName="cantidad" >
+                            </div>
+                            <div class="col-md-3">
+                                <label for="Peso" class="form-label">Peso</label>
+                                <input type="text" class="form-control" id="Peso" formControlName="peso">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="TipoC" class="form-label">Tipo Contenido</label>
+                                <select id="TipoC" [(ngModel)]="ticket.tipoContenido" formControlName="tipoContenido">
+                                    <option *ngFor="let option of contenido" >
+                                        {{ option.descripcion }}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="Unidad" class="form-label">Unidad</label>
+                                <select id="Unidad" [(ngModel)]="ticket.unidad" formControlName="unidad">
+                                    <option *ngFor="let option of unidad" >
+                                        {{ option.descripcion }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Contenedor</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="Contenedor" class="form-label">Contenedor</label>
+                                <select id="Contenedor" formControlName="contenedor"> 
+                                    <option *ngFor="let option of contenedor" >
+                                        {{ option.codigo }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="activeModal.close('Close click')">Cerrar</button>
+        <button type="submit" class="btn btn-success" >Guardar</button>
+    
+    </div>
+</form>
