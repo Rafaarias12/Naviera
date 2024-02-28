@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+    ports:
+      - "3306:3306"
+
+  backend:
+    build: ./out
+    container_name: backend-container
+    ports:
+      - "7078:7078"
+    depends_on:
+      - mysql
+
+  frontend:
+    build: ./frontend
+    container_name: frontend-container
+    ports:
+      - "80:80"
+    depends_on:
+      - backend

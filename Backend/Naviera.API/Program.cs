@@ -43,7 +43,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         ClockSkew = TimeSpan.Zero
     });
 
-builder.WebHost.UseUrls("https://localhost:7078");
+//builder.WebHost.UseUrls("https://localhost:7078");
 
 var app = builder.Build();
 
