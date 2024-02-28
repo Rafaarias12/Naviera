@@ -1,7 +1,0 @@
-FROM mysql:8.0
-
-ENV MYSQL_ROOT_PASSWORD=password
-
-RUN apt-get update && apt-get install -y wget
-
-COPY Script.sql /docker-entrypoint-initdb.d/
